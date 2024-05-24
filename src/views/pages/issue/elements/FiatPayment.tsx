@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CheckInputHandle, EmailInput, NumberInput, SuccessModal } from "../../../../components";
+import { MoonPayBuyWidget } from '@moonpay/moonpay-react';
 
 interface FiatPaymentProps {}
 
@@ -12,6 +13,8 @@ export function FiatPayment(props: FiatPaymentProps) {
     emailInputRef.current?.clear();
     numberInputRef.current?.clear();
   };
+
+  const [visible, setVisible] = useState(true);
 
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault(); // Prevent default form submission behavior
@@ -27,6 +30,15 @@ export function FiatPayment(props: FiatPaymentProps) {
 
   return (
     <>
+      <MoonPayBuyWidget
+          variant="embedded"
+          baseCurrencyCode="usd"
+          baseCurrencyAmount="100"
+          defaultCurrencyCode="eth"
+          visible={visible}
+      />
+
+
       <form className="form-small mt-3 flex-column gap-1 align-items-center position-relative">
         <EmailInput label={"Your email"} ref={emailInputRef} />
 

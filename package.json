@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@metamask/detect-provider": "^2.0.0",
+    "@moonpay/moonpay-js": "^0.5.0",
+    "@moonpay/moonpay-react": "^1.6.2",
     "@types/jest": "27.5.2",
     "@types/node": "16.18.58",
     "@types/react": "18.2.25",
