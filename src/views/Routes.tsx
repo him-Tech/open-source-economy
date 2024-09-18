@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import React from "react";
-import { Issue, Issues } from "./pages";
+import {Issue, Issues, Shop} from "./pages";
 
 export const Routes = () => {
   const router = createBrowserRouter([
@@ -11,6 +11,10 @@ export const Routes = () => {
     {
       path: "/:ownerParam/:repoParam/issues/:numberParam",
       element: <Issue />,
+    },
+    {
+      path: "/shop",
+      element: <Shop />,
     },
     // {
     //   path: "/",
